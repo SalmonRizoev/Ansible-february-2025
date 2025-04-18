@@ -1,0 +1,2 @@
+vm1 ansible_host=54.80.159.54
+vm2 ansible_host=54.211.14.167 ansible_user=ec2-user 

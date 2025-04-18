@@ -1,0 +1,23 @@
+- hosts: all
+  become: yes
+  tsks: 
+  - name: Install apache 
+    ansible.builtin.apt: 
+      name: unzip
+      state: absent
+      update_cache: yes 
+    notify: 
+     - create user brad
+     - restart service apache
+
+  handlers:
+  - name: restart service apache
+    ansible.builtin.service:
+      name: apache2
+      state: restarted 
+     
+
+  - name: create user brad
+    ansible.builtin.user:
+      name: brad
+      
